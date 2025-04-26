@@ -1,0 +1,277 @@
+
+
+/* Remove the gradient animation since we're using a background image now */
+/* @keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} */
+
+
+/* Elegant Header with Subtle Animation */
+.header {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #2a2a72;
+  text-align: center;
+  padding: 25px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.08),
+    0 6px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.header:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+.header:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Refined Filters Container */
+.filter-container {
+  max-width: 550px;
+  margin: 30px auto;
+  padding: 28px 32px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 5px 15px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  text-align: left;
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+  color: #2a2a72;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.filter-group {
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2a2a72;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+/* Enhanced Search Bar */
+.css-2b097c-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(200, 200, 200, 0.4);
+  border-radius: 12px;
+  padding: 10px;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.css-2b097c-container:hover, .css-2b097c-container:focus-within {
+  background: rgba(255, 255, 255, 1);
+  border-color: #4facfe;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.15);
+}
+
+/* Beautiful Search Button */
+.search-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.search-button:hover {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 75%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(79, 172, 254, 0.4);
+}
+
+.search-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(79, 172, 254, 0.4);
+}
+
+/* Elegant Candidates Results */
+.results-container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.candidate-card {
+  background: rgba(230, 237, 247, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.05),
+    0 5px 10px rgba(0, 0, 0, 0.03);
+  text-align: left;
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.candidate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.08),
+    0 8px 15px rgba(0, 0, 0, 0.05);
+  border-color: rgba(79, 172, 254, 0.3);
+}
+
+.candidate-card:hover:after {
+  opacity: 1;
+}
+
+.candidate-card:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.candidate-card h4 {
+  color: #2a2a72;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.candidate-card p {
+  color: #555;
+  margin: 8px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Add this to your App.css */
+
+.header-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.job-role-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
+  letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+.job-role-button:hover {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 75%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(79, 172, 254, 0.4);
+}
+
+.job-role-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(79, 172, 254, 0.4);
+}
+
+/* You'll need to update this to make the header responsive in the container */
+@media (max-width: 768px) {
+  .job-role-button {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .header {
+    font-size: 2.2rem;
+    padding: 20px 15px;
+  }
+  
+  .filter-container {
+    padding: 22px 20px;
+  }
+  
+  .results-container {
+    grid-template-columns: 1fr;
+  }
+}
+
