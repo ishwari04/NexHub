@@ -264,14 +264,14 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-        {/* Sales Quantity - Bar Chart */}
+      
         <Box
           gridColumn="span 4"
           backgroundColor={colors.primary[400]}
           p="30px"
         >
           <Typography variant="h5" fontWeight="600" sx={{ mb: "10px" }}>
-            Sales Quantity
+            Skills
           </Typography>
           <Box height="200px" mt="-10px">
             <BarChart isDashboard={true} />

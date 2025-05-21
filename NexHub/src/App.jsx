@@ -45,6 +45,7 @@ function App() {
           <CssBaseline />
           <AuthProvider>
             <Routes>
+            <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route
@@ -76,7 +77,7 @@ const ProtectedRoutes = ({ isSidebar, setIsSidebar }) => {
         <Topbar setIsSidebar={setIsSidebar} />
         <Routes>
           {/* Public Pages */}
-          <Route path="/" element={<Home />} />
+          
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/students" element={<Students />} />
           <Route path="/contacts" element={<Contacts />} />

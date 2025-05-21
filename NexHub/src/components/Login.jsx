@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-import API from "../api/axiosInstance";
+import API from "../api/axiosInstance";// Adjust path based on file location
+
 import {
   Box,
   Button,
@@ -46,17 +47,23 @@ const Login = () => {
 
   return (
     <Box
-  display="flex"
-  justifyContent="center"
-  alignItems="center"
-  minHeight="100vh"
-  sx={{
-    backgroundImage: 'url(https://source.unsplash.com/random)', // example image from Unsplash
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-  }}
->
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    sx={{
+      width: '100%',
+      height: '100%',
+      margin: 0,
+      padding: 0,
+      backgroundImage: 'url("/b4.jpg")',
+      backgroundSize: 'cover',  // Changed from 'cover' to 'contain'
+      backgroundPosition: 'bottom',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor: '#f5f5f5',  // Added background color as fallback
+     
+    }}
+  >
+  
 
       <Paper elevation={10} sx={{ padding: 4, width: 400 }}>
         <Box display="flex" flexDirection="column" alignItems="center">

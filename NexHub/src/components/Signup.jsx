@@ -43,12 +43,22 @@ const Signup = () => {
 
   return (
     <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      minHeight="100vh"
-      sx={{ background: "linear-gradient(to right, #667eea, #764ba2)" }}
-    >
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    sx={{
+      width: '100%',
+      height: '100%',
+      margin: 0,
+      padding: 0,
+      backgroundImage: 'url("/b4.jpg")',
+      backgroundSize: 'cover',  // Changed from 'cover' to 'contain'
+      backgroundPosition: 'bottom',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor: '#f5f5f5',  // Added background color as fallback
+     
+    }}
+  >
       <Paper elevation={10} sx={{ padding: 4, width: 400 }}>
         <Box display="flex" flexDirection="column" alignItems="center">
           <BadgeOutlinedIcon sx={{ fontSize: 40, color: "#667eea" }} />

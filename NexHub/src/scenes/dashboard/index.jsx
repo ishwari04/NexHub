@@ -18,6 +18,8 @@ import PieChart from "../../components/PieChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import StarIcon from "@mui/icons-material/Star";
+
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -28,18 +30,6 @@ const Dashboard = () => {
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
-        <Button
-          sx={{
-            backgroundColor: colors.blueAccent[700],
-            color: colors.grey[100],
-            fontSize: "14px",
-            fontWeight: "bold",
-            padding: "10px 20px",
-          }}
-        >
-          <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-          Download Reports
-        </Button>
       </Box>
 
       {/* ROW 1 - Stats */}
@@ -180,7 +170,7 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-       {/* Recent Resume Generations */}
+      {/* Top Student Scores */}
 <Box
   gridColumn="span 4"
   gridRow="span 1"
@@ -199,70 +189,95 @@ const Dashboard = () => {
       variant="h5"
       fontWeight="600"
     >
-      Recent Resume Generations
+      Top Student Scores
     </Typography>
   </Box>
-  {mockTransactions.map((item, i) => (
-    <Box
-      key={`${item.txId}-${i}`}
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-      borderBottom={`4px solid ${colors.primary[500]}`}
-      p="15px"
-    >
-      <Box>
-        <Typography
-          color={colors.greenAccent[500]}
-          variant="h5"
-          fontWeight="600"
-        >
-          {item.user}
-        </Typography>
-        <Typography color={colors.grey[100]}>
-          Resume ID: {item.txId}
-        </Typography>
-      </Box>
-      <Typography color={colors.grey[100]}>
-        {item.date}
-      </Typography>
-      <Box
-        backgroundColor={colors.greenAccent[500]}
-        p="5px 10px"
-        borderRadius="4px"
-      >
-        Status: Generated
-      </Box>
-    </Box>
-  ))}
-</Box>
 
-        {/* Campaign Progress */}
-        <Box
-          gridColumn="span 4"
-          backgroundColor={colors.primary[400]}
-          p="30px"
-        >
-          <Typography variant="h5" fontWeight="600">
-            Campaign
-          </Typography>
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            mt="25px"
+  {[
+    { id: 124, rank: 1, name: "Julia Leach", score: 61.34 },
+    { id: 1203, rank: 2, name: "Dylan Marquez", score: 53.41 },
+    { id: 538, rank: 3, name: "Kelly Griffith", score: 51.48 },
+    { id: 895, rank: 4, name: "Michael Johnson", score: 51.41 },
+    { id: 1417, rank: 5, name: "Leah Gomez", score: 50.74 },
+  ].map((student) => {
+    // Smart mapping: score determines stars (0-100 scale into 1-5 stars)
+    let stars = 1;
+    if (student.score > 80) stars = 5;
+    else if (student.score > 60) stars = 4;
+    else if (student.score > 40) stars = 3;
+    else if (student.score > 20) stars = 2;
+
+    return (
+      <Box
+        key={student.id}
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        borderBottom={`4px solid ${colors.primary[500]}`}
+        p="15px"
+      >
+        <Box>
+          <Typography
+            color={colors.greenAccent[500]}
+            variant="h5"
+            fontWeight="600"
           >
-            <ProgressCircle size="125" />
-            <Typography
-              variant="h5"
-              color={colors.greenAccent[500]}
-              sx={{ mt: "15px" }}
-            >
-              $48,352 revenue generated
-            </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            {student.rank}. {student.name}
+          </Typography>
+          <Typography color={colors.grey[100]}>
+            Student ID: {student.id}
+          </Typography>
+        </Box>
+
+        <Box display="flex" alignItems="center">
+          <Typography color={colors.grey[100]} fontWeight="bold">
+            {student.score}
+          </Typography>
+          <Box ml={1} display="flex">
+            {Array.from({ length: stars }).map((_, i) => (
+              <StarIcon
+                key={i}
+                sx={{ color: "#FFD700", fontSize: "20px", ml: "2px" }}
+              />
+            ))}
           </Box>
         </Box>
+      </Box>
+    );
+  })}
+</Box>
+
+
+
+        {/* Median Package Info */}
+<Box
+  gridColumn="span 4"
+  backgroundColor={colors.primary[400]}
+  p="30px"
+>
+  <Typography variant="h5" fontWeight="600">
+    Median Package
+  </Typography>
+  <Box
+    display="flex"
+    flexDirection="column"
+    alignItems="center"
+    mt="25px"
+  >
+    <ProgressCircle size="125" />
+    <Typography
+      variant="h5"
+      color={colors.greenAccent[500]}
+      sx={{ mt: "15px" }}
+    >
+      ₹7.5 LPA
+    </Typography>
+    <Typography>
+      Based on current batch placement statistics
+    </Typography>
+  </Box>
+</Box>
+
 
         {/* Sales Quantity - Bar Chart */}
         <Box
@@ -271,7 +286,7 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600" sx={{ mb: "10px" }}>
-            Sales Quantity
+            Skills
           </Typography>
           <Box height="200px" mt="-10px">
             <BarChart isDashboard={true} />
