@@ -1,14 +1,17 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 from neo4j import GraphDatabase
 from flask_cors import CORS
 
+load_dotenv()  # Load env vars from .env file
+
 app = Flask(__name__)
 CORS(app)
 
-# Neo4j Connection
-URI = "neo4j+s://706ff358.databases.neo4j.io"
-USER = "neo4j"
-PASSWORD = "SnywUI0qUAMj8XEej3banhWdE908q7JvVxn4mkOfrSQ"
+URI = os.getenv("NEO4J_URI")
+USER = os.getenv("NEO4J_USER")
+PASSWORD = os.getenv("NEO4J_PASSWORD")
 
 driver = GraphDatabase.driver(URI, auth=(USER, PASSWORD))
 
