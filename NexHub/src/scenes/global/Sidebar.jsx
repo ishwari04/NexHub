@@ -68,7 +68,7 @@ const Sidebar = () => {
     }
   };
 
-  // 🛑 Don't render anything until user is available
+  // Don't render anything until user is available
   if (!user) return null;
 
   return (
@@ -89,6 +89,13 @@ const Sidebar = () => {
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
         },
+        // Fixed position styling
+        position: "fixed",
+        height: "100vh",
+        zIndex: 1000,
+        left: 0,
+        top: 0,
+        overflowY: "auto",
       }}
     >
       <ProSidebar collapsed={isCollapsed}>
