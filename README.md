@@ -112,4 +112,4 @@ This project is open source and available under the [MIT License](LICENSE).
 **Project:** NexHub
 
 
-![Alt Text]([https://github.com/ishwari04/NexHub/blob/main/446080979-6ec94fb0-29b0-44f5-b9cc-7207e668beb5.jpg])
+![Project Banner](https://github.com/ishwari04/NexHub/blob/main/446080979-6ec94fb0-29b0-44f5-b9cc-7207e668beb5.jpg?raw=true)
