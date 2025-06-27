@@ -3,7 +3,14 @@
 **NexHub** is a full-stack web application built using **React.js** on the frontend and **Django REST Framework** on the backend. It serves as a modular platform to manage data and APIs efficiently, supporting modern web development practices and scalable architecture.
 
 ---
+## Video Representation
 
+
+https://github.com/user-attachments/assets/654e29e1-2109-449c-a68b-afd97cc5f993
+
+
+
+---
 ## 📌 Features
 
 - ✅ Full-stack architecture (React + Django)
